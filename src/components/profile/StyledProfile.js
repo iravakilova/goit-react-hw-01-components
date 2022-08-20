@@ -5,6 +5,7 @@ export const Description = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    background-color: ${p => p.theme.colors.white};
 `;
 
 export const Avatar = styled.img`
@@ -18,5 +19,6 @@ export const Avatar = styled.img`
 export const Stats = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: ${p => p.theme.colors.muted};
     margin-top: ${p => p.theme.space[4]}px;
 `;

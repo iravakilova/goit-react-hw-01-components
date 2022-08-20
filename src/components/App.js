@@ -12,7 +12,7 @@ import { Box } from './Box';
 
 export const App = () => {
   return (
-    <Box>
+    <Box width = "80%" mx = "auto">
       <Profile user={users} />
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friendsdata} />;

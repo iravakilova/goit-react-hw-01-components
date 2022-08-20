@@ -3,13 +3,13 @@ import { Box } from 'components/Box';
 import { Title, StatList, Item } from './StyledStatistics';
 
 export const Statistics = ({ title, stats }) => {
-    return (<Box as="section" width = "50%" mx = "auto" py = {4}>
+    return (<Box as="section" mx = "auto" py = {4}>
   <Title>{title}</Title>
         <StatList>
             {stats.map(({ id, label, percentage }) =>
             (<Item key={id}>
-                <span class="label">{label}</span>
-                <span class="percentage">{percentage}%</span>
+                <Box fontSize = "s">{label}</Box>
+                <Box fontSize = "m">{percentage}%</Box>
             </Item>))}
         </StatList>   
     </Box>

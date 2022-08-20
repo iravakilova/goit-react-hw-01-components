@@ -4,7 +4,7 @@ import { Avatar, Description, Stats } from './StyledProfile';
 
 export const Profile = ({ user }) => {
   const { username, tag, location, avatar, stats } = user;
-  return <Box as="section" width = "50%" mx = "auto" py = {4}>
+  return <Box as="section" mx = "auto" py = {4}>
   <Description>
     <Avatar
       src={avatar}
