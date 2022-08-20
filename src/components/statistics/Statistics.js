@@ -1,21 +1,25 @@
 import PropTypes from 'prop-types';
+import { Box } from 'components/Box';
+import { Title, StatList, Item } from './StyledStatistics';
 
 export const Statistics = ({ title, stats }) => {
-    return (<section class="statistics">
-  <h2 class="title">{title}</h2>
-        <ul class="stat-list">
-            {stats.map(({ label, percentage }) =>
-            (<li class="item">
+    return (<Box as="section" width = "50%" mx = "auto" py = {4}>
+  <Title>{title}</Title>
+        <StatList>
+            {stats.map(({ id, label, percentage }) =>
+            (<Item key={id}>
                 <span class="label">{label}</span>
                 <span class="percentage">{percentage}%</span>
-            </li>))}
-        </ul>   
-    </section>
+            </Item>))}
+        </StatList>   
+    </Box>
     )
 }
 
 Statistics.propTypes = {
-    stats: PropTypes.array,
-    label: PropTypes.string,
-    percentage: PropTypes.number,
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf.isRequired,
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
 }

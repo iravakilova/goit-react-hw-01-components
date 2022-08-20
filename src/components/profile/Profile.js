@@ -1,40 +1,48 @@
 import PropTypes from 'prop-types';
+import { Box } from 'components/Box';
+import { Avatar, Description, Stats } from './StyledProfile';
 
 export const Profile = ({ user }) => {
   const { username, tag, location, avatar, stats } = user;
-  return <div class="profile">
-  <div class="description">
-    <img
+  return <Box as="section" width = "50%" mx = "auto" py = {4}>
+  <Description>
+    <Avatar
       src={avatar}
-      alt={username}
+      alt={tag}
       class="avatar"
     />
-    <p class="name">{username}</p>
-    <p class="tag">{tag}</p>
-    <p class="location">{location}</p>
-  </div>
+    <Box fontSize = "l" fontWeight = "bold" color = "black" mt = {3}>{username}</Box>
+    <Box fontSize = "m" color = "text" mt = {3}>@{tag}</Box>
+    <Box fontSize = "s" color = "text" mt = {3}>{location}</Box>
+  </Description>
 
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-      <span class="quantity">{stats.followers}</span>
-    </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{stats.views}</span>
-    </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{stats.likes}</span>
-    </li>
-  </ul>
-</div>;
+  <Stats>
+    <Box as = "li" display="flex" alignItems="center" flexDirection="column">
+      <Box fontSize = "m" color = "text">Followers</Box>
+      <Box fontSize = "m" fontWeight = "bold" color = "black" mt = {2}>{stats.followers}</Box>
+    </Box>
+    <Box as = "li" display="flex" alignItems="center" flexDirection="column">
+      <Box fontSize = "m" color = "text">Views</Box>
+      <Box fontSize = "m" fontWeight = "bold" color = "black" mt = {2}>{stats.views}</Box>
+    </Box>
+    <Box as = "li" display="flex" alignItems="center" flexDirection="column">
+      <Box fontSize = "m" color = "text">Likes</Box>
+      <Box fontSize = "m" fontWeight = "bold" color = "black" mt = {2}>{stats.likes}</Box>
+    </Box>
+  </Stats>
+</Box>;
 };
 
 Profile.propTypes = {
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
-    stats: PropTypes.object,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.exact({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+  }).isRequired,
 }
+
+
