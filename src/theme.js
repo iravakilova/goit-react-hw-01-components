@@ -33,6 +33,7 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid',
+    borderTable: '1px solid grey',
   },
   radii: {
     none: '0',

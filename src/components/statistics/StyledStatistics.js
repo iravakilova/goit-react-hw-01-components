@@ -13,11 +13,12 @@ export const StatList = styled.ul`
     justify-content: center;
 `;
 
-export const Item = styled.li`
+export const StatItem = styled.li`
    display: flex;
    align-items: center;
    flex-direction: column;
    gap: ${p => p.theme.space[2]}px;
+   width: 50px;
    background-color: ${randomColor};
    padding: ${p => p.theme.space[3]}px;
 `;
