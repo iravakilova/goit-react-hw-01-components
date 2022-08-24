@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FriendItem = styled.li`
+export const FriendListItem = styled.li`
     display: flex;
     align-items: center;
     justify-content: start;
